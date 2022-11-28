@@ -41,4 +41,4 @@ my_cur.execute("Select * from fruit_load_list")
 #my_data_row = my_cur.fetchone() #fetch one row
 my_data_row = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows) #change from my_data_row (one row) to my_data_rows (all rows)
+streamlit.dataframe(my_data_rows) 
