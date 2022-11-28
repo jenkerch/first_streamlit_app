@@ -22,16 +22,17 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
+
 #create function
 def get_fruitvice_data(this_fruit_choice):
      #streamlit.write('The user entered ', fruit_choice)
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     # remove raw file from screen - streamlit.text(fruityvice_response.json())
 
     # take the json version of the response and normalize it 
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     # output it to the screen as a table
-    streamlit.dataframe(fruityvice_normalized)
+    #streamlit.dataframe(fruityvice_normalized)
     return fruityvice_normalized
 
 
